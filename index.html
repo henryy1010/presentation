@@ -69,7 +69,27 @@ strong{font-weight:600;color:var(--blue)}
 @keyframes track-enter{from{opacity:0;transform:scaleX(.5);transform-origin:left}to{opacity:1;transform:none}}
 @media(max-width:700px){.appbar{height:57px;padding:0 14px}.wordmark{font-size:9px;letter-spacing:1.3px}.tools{gap:5px}.tool{padding:8px 10px;font-size:11px}main{min-height:calc(100svh - 57px);justify-content:flex-start;padding:9px 10px 24px}.toolbar{padding:16px 2px 0;gap:8px}.arrow{width:37px;height:37px}.counter{font-size:11px;min-width:43px}.dots{gap:5px}.dot{width:13px}.dot[aria-current=step]{width:26px}.keyhint{display:none}.overview-grid{grid-template-columns:1fr}#overview{padding:20px}.overview-grid button{font-size:22px}.focus main{justify-content:center}.mobile-copy{padding-top:30px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.slide.leaving{visibility:hidden}}
-</style>
+
+/* Small visual stories keep the reading order clear. */
+.slide::before{content:'';position:absolute;right:-95px;top:-145px;width:420px;height:420px;border:1px solid var(--line);border-radius:50%;opacity:.55;pointer-events:none}
+.slide::after{content:'';position:absolute;right:-40px;top:-90px;width:310px;height:310px;border:1px dashed var(--line);border-radius:50%;opacity:.55;pointer-events:none;animation:orbit-ring 90s linear infinite}
+.topline,.slide-content,.slide-footer{position:relative;z-index:1}
+.visual-band{flex:1;min-height:88px;display:flex;align-items:center;justify-content:center;padding:15px 0;position:relative;gap:22px;color:var(--blue);max-width:1360px}
+.visual-band .viz-label{font-size:13px;letter-spacing:2px;color:var(--muted);font-weight:500}
+.visual-band .node{display:flex;gap:13px;align-items:center;padding:14px 21px;border:1px solid var(--line);background:#245be906;border-radius:8px;font-size:22px;white-space:nowrap;position:relative}
+.visual-band .node b{font-size:28px;line-height:1;font-weight:400}.visual-band .connector{height:1px;width:95px;background:var(--line);position:relative;overflow:hidden}
+.visual-band .connector::after{content:'';width:30%;height:1px;background:var(--blue);position:absolute;left:-30%;animation:signal 3s infinite}
+.visual-band .node:last-child{border-color:var(--blue)}.visual-band .pulse{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px #245be910;animation:breathe 3s infinite}
+.slide .takeaway{margin-top:0}
+.support-viz{width:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}.support-viz .support-bars{display:flex;align-items:flex-end;gap:14px;height:58px}.support-viz i{width:44px;border-radius:4px 4px 0 0;background:var(--blue);height:var(--h);opacity:var(--a)}.support-viz .direction{flex:1;height:1px;background:var(--line);position:relative}.support-viz .direction::after{content:'↗';position:absolute;right:0;top:-27px;font-size:38px}.support-viz .independent{display:flex;align-items:center;gap:14px;font-size:25px}
+.doc-viz{display:flex;gap:28px;align-items:center;justify-content:center;width:100%}.doc-viz .doc{width:255px;height:88px;border:1px solid var(--line);border-radius:7px;display:flex;align-items:center;gap:18px;padding:17px 24px;background:#fff4;position:relative}.doc-viz .doc-icon{width:42px;height:50px;border:1.5px solid var(--blue);border-radius:3px;position:relative;flex-shrink:0}.doc-viz .doc-icon::after{content:'≡';position:absolute;inset:0;text-align:center;line-height:45px;font-size:32px}.doc-viz span{font-size:22px;color:var(--ink)}
+.challenge-viz{display:flex;gap:14px;width:100%;justify-content:center}.challenge-viz span{padding:12px 19px;border:1px solid var(--line);border-radius:30px;font-size:20px;color:var(--muted);display:flex;gap:12px;align-items:center}.challenge-viz b{color:var(--blue);font-weight:400}.slide:nth-child(4) .visual-band{min-height:80px;padding:10px 0}
+.chunk-viz{display:flex;align-items:center;width:100%;gap:24px}.chunk-viz .text-fragments{display:flex;gap:9px}.fragment{width:73px;padding:10px 12px;border:1px solid #245be935;border-radius:5px;background:#245be908}.fragment i{display:block;height:3px;background:var(--blue);opacity:.45;margin:6px 0}.fragment i:last-child{width:65%}.chunk-viz .path-caption{font-size:21px;letter-spacing:.1px;display:flex;align-items:center;gap:18px}.chunk-viz .path-caption span{color:var(--muted)}
+.example .visual-band{min-height:78px;padding:9px 0}.travel-viz{width:100%;height:80px;display:flex;align-items:center;justify-content:space-between;gap:25px}.ticket{display:flex;align-items:center;gap:28px;border:1px solid var(--line);border-radius:8px;padding:12px 23px;font-size:24px;letter-spacing:2px}.ticket small{font-size:12px;letter-spacing:1.5px;color:var(--muted);border-left:1px dashed var(--line);padding:8px 0 8px 25px}.travel-line{height:1px;background:var(--line);flex:1;position:relative}.travel-line::after{content:'✈';font-size:24px;position:absolute;top:-15px;left:10%;animation:travel 8s ease-in-out infinite}.travel-viz svg{width:240px;height:80px;flex-shrink:0}
+.conclusion .visual-band{min-height:80px;padding-top:20px;justify-content:flex-start}.conclusion .visual-band .node{background:#ffffff04}.slide.active .visual-band{animation:viz-enter 1s .4s both}.slide.active .doc:nth-child(2){animation:float-doc 6s ease-in-out infinite}.slide.active .support-bars i{animation:bar-in 1s .45s both;transform-origin:bottom}
+@keyframes signal{to{left:130%}}@keyframes breathe{50%{box-shadow:0 0 0 10px #245be906;opacity:.65}}@keyframes orbit-ring{to{transform:rotate(360deg)}}@keyframes viz-enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes bar-in{from{transform:scaleY(.1)}to{transform:scaleY(1)}}@keyframes float-doc{50%{transform:translateY(-5px)}}@keyframes travel{50%{left:85%}}@media(prefers-reduced-motion:reduce){.slide::after,.visual-band *{animation:none!important}}
+
+.conclusion .copy{gap:16px}.conclusion .copy p{font-size:33px}.conclusion .thank{font-size:32px}.conclusion .visual-band{min-height:68px;padding:12px 0}</style>
 </head>
 <body>
 <header class="appbar"><span class="wordmark"><i aria-hidden="true"></i>READING, SUPPORTED.</span><div class="tools"><button class="tool" id="readToggle" aria-pressed="false">Aa · Read</button><button class="tool" id="overviewToggle" aria-label="Show all slides">Slides</button><button class="tool" id="focusToggle" aria-label="Focus mode">⛶</button></div></header>
@@ -166,6 +186,19 @@ strong{font-weight:600;color:var(--blue)}
 const $=s=>document.querySelector(s);
 const slides=[...document.querySelectorAll('.slide')];
 const titles=slides.map(s=>s.querySelector('h1,h2').textContent);
+
+const visualStories=[
+  '<span class="node"><b>◌</b> Prepare</span><span class="connector"></span><span class="node"><b>≡</b> Understand</span><span class="connector"></span><span class="node"><span class="pulse"></span> Read independently</span>',
+  '<div class="support-viz"><span class="viz-label">TEACHER SUPPORT</span><div class="support-bars"><i style="--h:58px;--a:1"></i><i style="--h:44px;--a:.75"></i><i style="--h:29px;--a:.5"></i><i style="--h:16px;--a:.3"></i></div><span class="direction"></span><span class="independent"><span class="pulse"></span> Learner independence</span></div>',
+  '<div class="doc-viz"><div class="doc"><b class="doc-icon"></b><span>News article</span></div><div class="doc"><b class="doc-icon"></b><span>Restaurant menu</span></div><div class="doc"><b class="doc-icon"></b><span>Everyday email</span></div></div>',
+  '<div class="challenge-viz"><span><b>Aa</b> Vocabulary</span><span><b>≋</b> Grammar</span><span><b>◎</b> Culture</span><span><b>≡</b> Information</span><span><b>↗</b> Confidence</span></div>',
+  '<span class="node"><b>01</b> Connect</span><span class="connector"></span><span class="node"><b>02</b> Vocabulary</span><span class="connector"></span><span class="node"><b>03</b> Visuals</span><span class="connector"></span><span class="node"><b>04</b> Predict</span>',
+  '<div class="chunk-viz"><div class="text-fragments"><div class="fragment"><i></i><i></i><i></i></div><div class="fragment"><i></i><i></i><i></i></div><div class="fragment"><i></i><i></i><i></i></div></div><span class="connector"></span><span class="path-caption">Main idea <span>→</span> Key details <span>→</span> Pair discussion</span></div>',
+  '<div class="travel-viz"><span class="ticket">LONDON <small>WEEKEND TRIP</small></span><span class="travel-line"></span><svg viewBox="0 0 300 100" fill="none" stroke="currentColor" stroke-width="2"><circle cx="210" cy="44" r="34" opacity=".4"/><path d="M210 10V78M176 44H244M186 20L234 68M186 68L234 20M175 97L210 44L245 97" opacity=".4"/><path d="M0 97H300M25 97V55H70V97M35 55V25H60V55M40 25V15L47 2L54 15V25M85 97V57H150V97M95 57V45H105V57M132 57V45H142V57"/><circle cx="47" cy="39" r="8"/><path d="M47 33V39L51 42"/></svg></div>',
+  '<span class="node"><b>01</b> Strong support</span><span class="connector"></span><span class="node"><b>02</b> Guided practice</span><span class="connector"></span><span class="node"><span class="pulse"></span> Independent reading</span>'
+];
+slides.forEach((s,i)=>{const band=document.createElement('div');band.className='visual-band';band.setAttribute('aria-hidden','true');band.innerHTML=visualStories[i];const body=s.querySelector('.slide-content');body.insertBefore(band,body.querySelector('.takeaway'));});
+
 slides.forEach((s,i)=>{
   s.querySelectorAll('.reveal').forEach((e,j)=>e.style.setProperty('--order',j));
   const footer=document.createElement('footer');footer.className='slide-footer';
