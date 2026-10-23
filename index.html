@@ -1,41 +1,240 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#132c35"><meta name="description" content="An interactive eight-slide presentation about scaffolding authentic reading texts."><title>Scaffolding — Reading Studio</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f0">
+<meta name="description" content="Scaffolding authentic reading texts: a clear, eight-slide presentation for classroom delivery.">
+<title>Scaffolding — A Clearer Way to Read</title>
 <style>
-:root{--ink:#132c35;--paper:#f4f0e7;--orange:#da623c;--mint:#a8c9bc;--line:#d9d9cc;--s:1}*{box-sizing:border-box}body{margin:0;background:#132c35;color:var(--paper);font-family:Arial,Helvetica,sans-serif;min-height:100svh}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:3px solid #f7ba7e;outline-offset:4px}.appbar{height:64px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff20}.brand{display:flex;gap:10px;align-items:center;font-size:13px;letter-spacing:2px;font-weight:700}.logo{width:25px;height:25px;border:1px solid var(--mint);transform:rotate(-15deg);display:grid;place-items:center;color:var(--mint)}.tools{display:flex;gap:8px}.tool{border:1px solid #ffffff30;color:var(--paper);background:transparent;border-radius:30px;padding:9px 14px;font-size:12px}.tool[aria-pressed=true]{background:var(--paper);color:var(--ink)}main{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100svh - 64px);padding:24px 20px 16px}.stage{position:relative;overflow:hidden;flex-shrink:0;background:var(--paper);box-shadow:0 25px 65px #0004;border-radius:5px;isolation:isolate;touch-action:pan-y}.deck{width:1600px;height:900px;position:absolute;left:0;top:0;transform:scale(var(--s));transform-origin:top left;perspective:2000px;color:var(--ink)}.slide{position:absolute;inset:0;background:var(--paper);padding:55px 72px 45px;display:flex;flex-direction:column;visibility:hidden;pointer-events:none;overflow:hidden}.slide::before{content:'';position:absolute;inset:0;background-image:radial-gradient(#142c3520 .75px,transparent .75px);background-size:8px 8px;opacity:.12;pointer-events:none}.slide.active{visibility:visible;pointer-events:auto;z-index:2}.slide.enter{animation:arrival .8s cubic-bezier(.2,.8,.2,1) both}.slide.out{visibility:visible;animation:departure .7s ease both;z-index:1}.slide:nth-child(even){background:#e8eee8}.slide:nth-child(4){background:#152f38;color:#f4f0e7}.slide:nth-child(8){background:#dce8dd}.eyebrow{display:flex;justify-content:space-between;align-items:center;font-size:15px;letter-spacing:3px;font-weight:bold;padding-bottom:22px;border-bottom:1px solid currentColor;opacity:.65;position:relative}.eyebrow span:last-child{letter-spacing:1px}.body{position:relative;flex:1;min-height:0;padding:31px 0 20px;display:flex;flex-direction:column}h1,h2,h3,p{margin:0}h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-2px;line-height:1.04}h1{font-size:67px}h2{font-size:60px;max-width:1300px;margin-bottom:25px}.body p{font-size:25px;line-height:1.4}.footer{position:relative;display:flex;justify-content:space-between;align-items:center;border-top:1px solid currentColor;padding-top:15px;font-size:13px;letter-spacing:2px;opacity:.55}.footer b{font-size:22px}.columns{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;flex:1;min-height:0}.intro{display:flex;flex-direction:column;gap:18px}.intro p:first-child{font-size:22px;color:var(--orange);border-left:4px solid var(--orange);padding-left:18px;margin-bottom:6px}.opening .body{display:grid;grid-template-columns:1.16fr 1fr;gap:65px}.opening h1{margin-bottom:26px}.opening .intro{gap:14px}.opening .intro p{font-size:24px}.opening .intro p:first-child{font-size:21px}.art{position:relative;display:flex;align-items:center;justify-content:center;min-height:0}.orbit{position:absolute;width:490px;height:490px;border:1px solid #183e3825;border-radius:50%}.orbit::after{content:'';position:absolute;inset:35px;border:1px dashed #183e3830;border-radius:50%;animation:spin 70s linear infinite}.orb{position:absolute;width:23px;height:23px;border-radius:50%;background:var(--orange);left:10px;top:150px}.book{width:360px;height:410px;position:relative;transform:rotate(-11deg);animation:float 6s ease-in-out infinite;filter:drop-shadow(25px 35px 15px #0002)}.cover{position:absolute;inset:0;border-radius:5px 18px 18px 5px;background:var(--orange);border-left:22px solid #a8442c;padding:45px 30px;color:#fff9e9}.cover::after{content:'';position:absolute;left:0;right:5px;bottom:8px;height:14px;background:repeating-linear-gradient(0deg,#e5dcc9 0 2px,#fff9e9 2px 4px);border-radius:0 0 10px 0}.booklines{height:10px;background:currentColor;width:85%;margin:18px 0;opacity:.5}.booklines:nth-child(even){width:55%}.book .star{font-size:100px;line-height:1;margin:16px 0}.tile{position:absolute;padding:17px 24px;background:#fbf8f0;border:1px solid #d6dacb;box-shadow:5px 12px 20px #0001;transform:rotate(8deg);border-radius:9px;color:var(--ink);font:24px Georgia}.tile.one{top:50px;right:0}.tile.two{bottom:80px;left:0;transform:rotate(-6deg)}.tile.three{bottom:30px;right:30px;background:var(--mint)}.list{display:flex;flex-direction:column;gap:10px}.item{display:flex;gap:17px;align-items:center;background:#ffffff73;border:1px solid #183e381a;border-radius:11px;padding:15px 20px;font-size:25px;line-height:1.26}.icon{width:41px;height:41px;background:var(--ink);color:var(--paper);border-radius:50%;display:grid;place-items:center;flex-shrink:0;font-size:19px}.callout{font-size:25px;line-height:1.4;border-left:4px solid var(--orange);padding:13px 20px;background:#da623c0a;margin-top:18px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;flex:1}.card{background:#fff8;border:1px solid #193d3220;border-radius:12px;padding:20px 24px;position:relative}.card .num{display:inline-flex;justify-content:center;align-items:center;width:39px;height:39px;border:1px solid var(--orange);color:var(--orange);border-radius:50%;font-size:20px;margin-bottom:12px}.card h3{font-size:26px;font-weight:600;margin-bottom:9px}.card p{font-size:24px}.sectionlead{margin-bottom:21px}.strategy .cards{gap:14px}.strategy .card{padding:18px 24px}.strategy .card h3{display:inline;margin-left:10px}.strategy .num{margin-bottom:6px}.strategy .card p{margin-top:7px}.strategy .callout{margin-top:16px;padding:10px 18px}.while .cards{grid-template-columns:repeat(6,1fr)}.while .card{grid-column:span 2}.while .card:nth-child(n+4){grid-column:span 3}.while h2{margin-bottom:20px}.while .card p{font-size:23px}.dark .item{background:#ffffff09;border-color:#ffffff20}.dark .icon{background:var(--orange);color:white}.dark .callout{background:#ffffff08}.dark .columns{grid-template-columns:.8fr 1.4fr;gap:45px}.challenge-art{height:200px;display:flex;align-items:flex-end;gap:13px;margin:32px 25px 0}.challenge-art i{width:52px;border:1px solid #d6e4db60;background:#a8c9bc25;border-radius:4px 4px 0 0;animation:grow 1.5s both}.challenge-art i:nth-child(2){height:100px}.challenge-art i:nth-child(3){height:145px}.challenge-art i:nth-child(4){height:190px;background:var(--orange)}.challenge-art i:first-child{height:60px}.challenge-label{font:100px Georgia;color:var(--mint);opacity:.4}.media-stack{position:relative;margin-top:10px;height:240px}.paper{position:absolute;background:#fffdf5;border:1px solid #b9c7b7;padding:22px;width:270px;height:190px;box-shadow:10px 10px 0 #142c3508}.paper:nth-child(1){left:10px;top:20px;transform:rotate(-8deg)}.paper:nth-child(2){left:220px;top:50px;transform:rotate(9deg);background:#a8c9bc}.paper:nth-child(3){left:370px;top:0;transform:rotate(-4deg)}.paper b{font:23px Georgia;display:block;border-bottom:2px solid;margin-bottom:18px;padding-bottom:9px}.paper i{display:block;height:6px;background:currentColor;opacity:.18;margin:12px 0}.example h2{margin-bottom:19px}.example .columns{grid-template-columns:.75fr 1.25fr;gap:40px}.example .intro{gap:12px}.example .intro p:first-child{font-size:27px}.level{font-size:20px;display:inline-flex;width:max-content;border:1px solid;padding:8px 18px;border-radius:30px}.steps{display:flex;flex-direction:column;gap:13px}.step{padding:14px 22px 14px 30px;border-left:2px solid var(--orange);background:#fff8;border-radius:0 10px 10px 0}.step h3{font-size:24px;color:#a3472c;margin-bottom:7px}.step p,.step li{font-size:23px;line-height:1.32}.step ul{padding-left:25px;margin:5px 0}.london{width:100%;height:220px;margin-top:8px}.example .callout{font-size:23px;margin-top:13px}.closing .columns{grid-template-columns:1fr 1.1fr;gap:50px}.closing .intro{gap:18px}.closing .item{padding:13px 20px}.closing .thank{font:32px Georgia;color:#a3472c;margin-top:16px}.bridge{display:flex;align-items:flex-end;gap:12px;height:150px;margin:15px 0}.bridge i{width:75px;background:var(--ink);border-radius:7px 7px 0 0;position:relative}.bridge i::after{content:'↗';font-style:normal;color:var(--paper);position:absolute;top:5px;left:20px;font-size:35px}.bridge i:nth-child(1){height:35px;background:#b3c6ba}.bridge i:nth-child(2){height:65px;background:#86a596}.bridge i:nth-child(3){height:100px;background:#54806e}.bridge i:nth-child(4){height:140px;background:var(--orange)}.active .item,.active .card,.active .step{animation:reveal .8s both;animation-delay:calc(.13s + var(--i,0)*.07s)}.active h1,.active h2{animation:reveal .85s both}.active .intro{animation:reveal 1s .1s both}.controls{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:20px 0 0;gap:12px}.nav{display:flex;gap:9px;align-items:center}.arrow{border:1px solid #ffffff40;border-radius:50%;background:transparent;color:var(--paper);width:44px;height:44px;font-size:20px}.arrow:hover{background:var(--orange);border-color:var(--orange)}.arrow:disabled{opacity:.25;cursor:default}.count{font-size:12px;letter-spacing:2px;min-width:67px;text-align:center}.dots{display:flex;gap:9px}.dot{width:25px;height:4px;padding:0;border:0;background:#ffffff30;border-radius:10px;transition:.3s}.dot.current{background:#e99771;width:45px}.hint{font-size:11px;letter-spacing:1px;opacity:.5}.reader{display:none;width:100%;max-width:800px;padding:24px 4px 12px;line-height:1.6}.reader h2{font:30px/1.15 Georgia;letter-spacing:-.5px;margin-bottom:20px}.reader p{font-size:17px;line-height:1.65;margin:15px 0}.reader li{margin:8px 0;font-size:17px}.reader h3{color:#edb48c;font-size:18px;margin:24px 0 7px}.reader .read-label{font-size:10px;letter-spacing:3px;color:var(--mint);margin-bottom:18px}.reader.open{display:block}.reader .n{color:var(--mint)}.progress{height:3px;background:#ffffff15;width:100%;position:fixed;bottom:0;left:0;z-index:20}.progress div{background:var(--orange);height:100%;transition:width .7s}.overview{position:fixed;inset:0;z-index:30;background:#0e222aef;backdrop-filter:blur(16px);overflow:auto;padding:35px;display:none}.overview.open{display:block}.overview header{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto auto 35px}.overview-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.overview-grid button{border:1px solid #ffffff30;border-radius:12px;background:#ffffff08;color:var(--paper);text-align:left;padding:26px;font:24px/1.2 Georgia;transition:.2s}.overview-grid button:hover{background:#da623c40;transform:translateY(-3px)}.overview-grid span{display:block;font:12px Arial;color:var(--mint);margin-bottom:13px;letter-spacing:2px}.zoomed .appbar{display:none}.zoomed main{min-height:100svh}#exitFocus{display:none;position:fixed;top:9px;right:9px;z-index:15;background:#132c35cc}.zoomed #exitFocus{display:block}@keyframes arrival{from{opacity:0;transform:translateX(110px) rotateY(-8deg) scale(.96);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes departure{to{opacity:0;transform:translateX(-170px) rotateY(8deg) scale(.97);filter:blur(5px)}}@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes float{50%{transform:translateY(-16px) rotate(-7deg)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes grow{from{transform:scaleY(.2);transform-origin:bottom}}@media(max-width:700px){.appbar{height:58px;padding:0 14px}.brand{font-size:10px;letter-spacing:1.5px}.tool{font-size:11px;padding:8px 10px}.tools{gap:5px}main{min-height:calc(100svh - 58px);justify-content:flex-start;padding:22px 12px 25px}.stage{border-radius:4px}.controls{padding-top:16px}.hint{display:none}.dots{gap:6px}.dot{width:13px}.dot.current{width:25px}.arrow{width:40px;height:40px}.count{min-width:50px;font-size:11px}.reader{padding-top:31px}.overview{padding:22px}.overview-grid{grid-template-columns:1fr}.overview-grid button{font-size:23px}.zoomed main{justify-content:center}.zoomed .reader{display:none!important}.zoomed .controls{max-width:90vw}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}@media print{body{background:white}.appbar,.controls,.reader,.progress,.overview{display:none!important}main{padding:0;display:block}.stage{overflow:visible!important;box-shadow:none;width:auto!important;height:auto!important}.deck{position:static;transform:none}.slide{position:relative;visibility:visible;break-after:page;width:1600px;height:900px}.slide.out{animation:none}@page{size:16in 9in;margin:0}}
-.dark .challenge-art{height:120px;margin-top:12px;transform:scale(.75);transform-origin:bottom left}.dark .intro{gap:12px}.dark .callout{font-size:23px;margin-top:5px}.closing .item{font-size:24px;padding:10px 18px}.closing .callout{font-size:23px;padding:10px 17px;margin-top:13px}.closing .thank{margin-top:12px;font-size:29px}</style></head><body>
-<header class="appbar"><div class="brand"><span class="logo">↗</span>READING STUDIO</div><div class="tools"><button class="tool" id="readBtn" aria-pressed="false">Aa · Read</button><button class="tool" id="gridBtn" aria-label="View all slides">▦</button><button class="tool" id="focusBtn" aria-label="Focus mode">⛶</button><button class="tool" id="soundBtn" aria-label="Toggle transition sound" aria-pressed="false">Sound off</button></div></header>
-<button class="tool" id="exitFocus">✕ Exit</button><main><div class="stage" id="stage"><div class="deck" id="deck"></div></div><nav class="controls" aria-label="Presentation controls"><div class="nav"><button class="arrow" id="prev" aria-label="Previous slide">←</button><span class="count" id="count" aria-live="polite"></span><button class="arrow" id="next" aria-label="Next slide">→</button></div><div class="dots" id="dots"></div><span class="hint">← → NAVIGATE · SWIPE TO EXPLORE</span></nav><article class="reader" id="reader"></article></main><div class="progress"><div id="progress"></div></div><div class="overview" id="overview" role="dialog" aria-modal="true" aria-label="All slides"><header><span>EXPLORE THE PRESENTATION</span><button class="tool" id="closeGrid">✕ Close</button></header><div class="overview-grid" id="overviewGrid"></div></div>
+:root{--paper:#fafaf6;--ink:#172121;--muted:#596261;--blue:#245be9;--line:#d9ddd7;--scale:1}
+*{box-sizing:border-box}
+body{margin:0;background:#e8ebe6;color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+button:disabled{opacity:.25;cursor:default}
+.appbar{height:62px;padding:0 27px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.wordmark{font-size:11px;letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px}
+.wordmark i{width:11px;height:11px;display:block;background:var(--blue)}
+.tools{display:flex;gap:7px}.tool{background:transparent;border:1px solid #bfc5bc;border-radius:6px;padding:9px 13px;font-size:12px;min-height:36px}
+.tool:hover,.tool[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+main{min-height:calc(100svh - 62px);padding:6px 20px 18px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.stage{position:relative;overflow:hidden;background:var(--paper);flex-shrink:0;box-shadow:0 9px 40px #17212114;touch-action:pan-y;isolation:isolate}
+.deck{position:absolute;top:0;left:0;width:1600px;height:900px;transform:scale(var(--scale));transform-origin:top left;perspective:1800px}
+.slide{position:absolute;inset:0;padding:54px 84px 42px;background:var(--paper);visibility:hidden;display:flex;flex-direction:column;overflow:hidden;pointer-events:none}
+.slide.active{visibility:visible;pointer-events:auto;z-index:2}
+.slide.leaving{visibility:visible;z-index:1;animation:exit-slide .65s cubic-bezier(.3,0,.2,1) both}
+.slide.arriving{animation:enter-slide .85s cubic-bezier(.2,.8,.15,1) both}
+.deck.backward .slide.arriving{animation-name:enter-back}
+.deck.backward .slide.leaving{animation-name:exit-back}
+.slide:nth-child(4),.slide:nth-child(8){background:#172121;color:#fafaf6;--muted:#c3ccc7;--line:#48534e;--blue:#a8c1ff}
+.slide:nth-child(6){background:#eef2fc}
+.topline{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line);color:var(--muted);font-size:15px;letter-spacing:2px}
+.topline .chapter{display:flex;align-items:center;gap:12px}.chapter i{display:block;width:8px;height:8px;background:var(--blue)}
+.slide-content{flex:1;min-height:0;position:relative;padding:34px 0 24px;display:flex;flex-direction:column;justify-content:flex-start}
+h1,h2,p{margin:0}
+h1,h2{font-weight:500;letter-spacing:-2.8px;line-height:1.08;font-size:66px;max-width:1400px}
+h1{font-size:72px;max-width:1370px;line-height:1.07;letter-spacing:-3.5px}
+.copy{margin-top:29px;display:flex;flex-direction:column;gap:22px;max-width:1360px}
+p,.steps{font-size:35px;line-height:1.38;letter-spacing:-.4px}
+strong{font-weight:600;color:var(--blue)}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:17px}
+.steps li{display:flex;align-items:baseline;gap:21px}
+.step-number{color:var(--blue);font-size:21px;font-weight:600;font-variant-numeric:tabular-nums;min-width:35px;letter-spacing:0}
+.takeaway{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);font-size:31px;line-height:1.37;max-width:1360px}
+.slide-footer{border-top:1px solid var(--line);padding-top:17px;display:flex;justify-content:space-between;color:var(--muted);font-size:14px;letter-spacing:1.8px;align-items:center}
+.mini-track{display:flex;gap:5px}.mini-track i{height:3px;width:18px;background:var(--line)}.mini-track i.on{background:var(--blue)}
+.cover .copy{max-width:1330px;gap:19px;margin-top:29px}.cover .copy p{font-size:35px}.cover .takeaway{font-size:28px}
+.example .copy{gap:18px;margin-top:24px}.example .steps{gap:18px;font-size:33px}.example .takeaway{font-size:29px}
+.conclusion .copy{gap:23px}.thank{font-size:35px;color:var(--blue);margin-top:5px;letter-spacing:-.7px}
+.slide.active .reveal{animation:text-enter .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.09s + var(--order,0)*.075s)}
+.slide.active .mini-track{animation:track-enter 1s .2s both}
+.sweep{position:absolute;top:0;left:0;bottom:0;width:7px;background:var(--blue);z-index:6;transform:scaleY(0);transform-origin:top}
+.stage.turning .sweep{animation:sweep 1s cubic-bezier(.2,.8,.2,1) both}
+.toolbar{width:100%;max-width:1000px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:17px}
+.nav{display:flex;align-items:center;gap:10px}.arrow{width:43px;height:40px;background:transparent;border:1px solid #bdc5bc;border-radius:6px;font-size:22px;display:grid;place-items:center}
+.arrow:hover:enabled{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.counter{font-size:12px;font-variant-numeric:tabular-nums;letter-spacing:1.5px;min-width:58px;text-align:center}.dots{display:flex;gap:7px}.dot{background:#bac1b7;width:23px;height:4px;border:0;padding:0;transition:width .4s,background .4s}.dot[aria-current=step]{width:44px;background:var(--blue)}
+.keyhint{font-size:11px;color:var(--muted);letter-spacing:1.1px}
+.mobile-copy{display:none;width:100%;max-width:850px;padding:30px 7px 5px}.mobile-copy.open{display:block}.mobile-label{font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:18px}
+.mobile-copy h2{font-size:29px;line-height:1.16;letter-spacing:-.8px;margin-bottom:25px}.mobile-copy p{font-size:19px;line-height:1.65;letter-spacing:0;margin-bottom:19px}.mobile-copy .steps{font-size:19px;gap:19px}.mobile-copy .step-number{font-size:13px;min-width:21px}.mobile-copy .steps li{gap:10px}.mobile-copy .takeaway{margin-top:26px;font-size:19px}.mobile-copy .thank{font-size:25px;margin-top:22px}
+#overview{position:fixed;inset:0;z-index:30;background:#f5f5f0f7;backdrop-filter:blur(14px);padding:30px;overflow:auto;display:none}#overview.open{display:block}.overview-head{max-width:1000px;margin:0 auto 30px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:2px}.overview-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}.overview-grid button{background:transparent;text-align:left;border:1px solid #c9d0c5;border-radius:7px;padding:23px 25px;font-size:25px;line-height:1.25;letter-spacing:-.6px}.overview-grid button:hover{border-color:var(--blue);background:#245be909}.overview-grid span{display:block;font-size:11px;color:var(--blue);letter-spacing:1.4px;margin-bottom:15px}
+.focus .appbar{display:none}.focus main{min-height:100svh;padding-top:14px}.focus .keyhint{display:none}.focus .mobile-copy{display:none!important}.focus-exit{display:none;position:fixed;top:10px;right:12px;z-index:15;background:#fafaf6ef}.focus .focus-exit{display:block}.progress{position:fixed;left:0;bottom:0;right:0;height:3px;background:#17212115;z-index:12}.progress i{display:block;background:var(--blue);height:100%;transition:width .65s cubic-bezier(.2,.8,.2,1)}
+@keyframes enter-slide{from{opacity:0;transform:translateX(160px) rotateY(-7deg);clip-path:inset(0 0 0 12%)}to{opacity:1;transform:none;clip-path:inset(0)}}
+@keyframes exit-slide{to{opacity:0;transform:translateX(-180px) scale(.97)}}
+@keyframes enter-back{from{opacity:0;transform:translateX(-160px) rotateY(7deg);clip-path:inset(0 12% 0 0)}to{opacity:1;transform:none;clip-path:inset(0)}}
+@keyframes exit-back{to{opacity:0;transform:translateX(180px) scale(.97)}}
+@keyframes text-enter{from{opacity:0;transform:translateY(23px);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes sweep{0%{transform:scaleY(0)}35%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes track-enter{from{opacity:0;transform:scaleX(.5);transform-origin:left}to{opacity:1;transform:none}}
+@media(max-width:700px){.appbar{height:57px;padding:0 14px}.wordmark{font-size:9px;letter-spacing:1.3px}.tools{gap:5px}.tool{padding:8px 10px;font-size:11px}main{min-height:calc(100svh - 57px);justify-content:flex-start;padding:9px 10px 24px}.toolbar{padding:16px 2px 0;gap:8px}.arrow{width:37px;height:37px}.counter{font-size:11px;min-width:43px}.dots{gap:5px}.dot{width:13px}.dot[aria-current=step]{width:26px}.keyhint{display:none}.overview-grid{grid-template-columns:1fr}#overview{padding:20px}.overview-grid button{font-size:22px}.focus main{justify-content:center}.mobile-copy{padding-top:30px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.slide.leaving{visibility:hidden}}
+</style>
+</head>
+<body>
+<header class="appbar"><span class="wordmark"><i aria-hidden="true"></i>READING, SUPPORTED.</span><div class="tools"><button class="tool" id="readToggle" aria-pressed="false">Aa · Read</button><button class="tool" id="overviewToggle" aria-label="Show all slides">Slides</button><button class="tool" id="focusToggle" aria-label="Focus mode">⛶</button></div></header>
+<button class="tool focus-exit" id="focusExit">✕ Exit</button>
+<main>
+<div class="stage" id="stage" aria-roledescription="carousel" aria-label="Scaffolding presentation"><div class="deck" id="deck">
+<section class="slide cover" id="slide-1" aria-roledescription="slide" aria-label="1 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>THE BIG IDEA</span><span>01 / 08</span></div>
+<div class="slide-content"><h1 class="reveal">Scaffolding Difficult Authentic Reading Texts for Low-Level Learners</h1><div class="copy">
+<p class="reveal">Authentic texts show students how English is used in real life. However, unfamiliar words and long sentences can make these texts difficult for beginners.</p>
+<p class="reveal"><strong>Scaffolding</strong> gives learners clear, temporary support. It helps them understand the text, take part in the lesson, and read with more confidence.</p>
+</div><p class="takeaway reveal">This presentation explains how to support students before, during, and after reading.</p></div>
+</section>
+<section class="slide" id="slide-2" aria-roledescription="slide" aria-label="2 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>TEMPORARY SUPPORT</span><span>02 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">What Is Scaffolding in Reading?</h2><div class="copy">
+<p class="reveal">Scaffolding is the <strong>temporary support</strong> a teacher provides when a task is too difficult for students to complete independently.</p>
+<p class="reveal">In reading lessons, this support may include explaining key words, showing pictures, dividing a text into sections, and asking guiding questions.</p>
+<p class="reveal">At first, the teacher gives more help. As students improve, the teacher gradually reduces this support.</p>
+</div><p class="takeaway reveal">The goal is to help learners move from supported reading to <strong>independent reading</strong>.</p></div>
+</section>
+<section class="slide" id="slide-3" aria-roledescription="slide" aria-label="3 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>REAL-WORLD ENGLISH</span><span>03 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">What Are Authentic Reading Texts?</h2><div class="copy">
+<p class="reveal">Authentic texts are created for <strong>real communication</strong>, rather than specifically for language learners. They show how English is used outside the classroom.</p>
+<ol class="steps">
+<li class="reveal"><span class="step-number">01</span><span>News articles, websites, and travel advertisements provide real information.</span></li>
+<li class="reveal"><span class="step-number">02</span><span>Menus, emails, and messages help people communicate in everyday situations.</span></li>
+<li class="reveal"><span class="step-number">03</span><span>Instructions and product descriptions help people understand what to do.</span></li>
+</ol></div><p class="takeaway reveal">These materials connect classroom learning with <strong>real-life needs</strong>.</p></div>
+</section>
+<section class="slide" id="slide-4" aria-roledescription="slide" aria-label="4 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>THE CHALLENGES</span><span>04 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">Why Do Beginners Find Them Difficult?</h2><div class="copy">
+<p class="reveal">Low-level learners may understand some words but still struggle to follow the whole text.</p>
+<ol class="steps">
+<li class="reveal"><span class="step-number">01</span><span><strong>Unfamiliar vocabulary</strong> makes important information difficult to understand.</span></li>
+<li class="reveal"><span class="step-number">02</span><span><strong>Long sentences and complex grammar</strong> make meaning harder to follow.</span></li>
+<li class="reveal"><span class="step-number">03</span><span><strong>Cultural references and too much information</strong> can cause confusion.</span></li>
+<li class="reveal"><span class="step-number">04</span><span><strong>Low confidence</strong> can reduce motivation and participation.</span></li>
+</ol></div><p class="takeaway reveal">Teachers should identify these difficulties and choose suitable support.</p></div>
+</section>
+<section class="slide" id="slide-5" aria-roledescription="slide" aria-label="5 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>BEFORE READING</span><span>05 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">Pre-Reading Scaffolding Strategies</h2><div class="copy">
+<p class="reveal">Before reading, the teacher prepares students for the topic and gives them a clear starting point.</p>
+<ol class="steps">
+<li class="reveal"><span class="step-number">01</span><span><strong>Activate prior knowledge.</strong> Ask what students already know about the topic.</span></li>
+<li class="reveal"><span class="step-number">02</span><span><strong>Pre-teach key vocabulary.</strong> Explain five or six essential words using simple definitions.</span></li>
+<li class="reveal"><span class="step-number">03</span><span><strong>Use visual support.</strong> Show relevant pictures to help students understand the context.</span></li>
+<li class="reveal"><span class="step-number">04</span><span><strong>Make predictions.</strong> Use the title and images to guess the content.</span></li>
+</ol></div><p class="takeaway reveal">These activities make the text more familiar and help students feel prepared.</p></div>
+</section>
+<section class="slide" id="slide-6" aria-roledescription="slide" aria-label="6 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>DURING READING</span><span>06 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">While-Reading Scaffolding Strategies</h2><div class="copy">
+<p class="reveal">During reading, students need to understand information step by step.</p>
+<ol class="steps">
+<li class="reveal"><span class="step-number">01</span><span><strong>Chunk the text:</strong> divide it into short, manageable sections.</span></li>
+<li class="reveal"><span class="step-number">02</span><span><strong>Read for gist:</strong> identify the general meaning before focusing on details.</span></li>
+<li class="reveal"><span class="step-number">03</span><span><strong>Use guiding questions:</strong> help students find the most important information.</span></li>
+<li class="reveal"><span class="step-number">04</span><span><strong>Highlight key information:</strong> underline useful words and main ideas.</span></li>
+<li class="reveal"><span class="step-number">05</span><span><strong>Use pair work:</strong> let students discuss difficult parts with a partner.</span></li>
+</ol></div><p class="takeaway reveal">The focus is on understanding meaning, rather than translating every word.</p></div>
+</section>
+<section class="slide example" id="slide-7" aria-roledescription="slide" aria-label="7 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>A CLASSROOM EXAMPLE · A1–A2</span><span>07 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">Reading a Travel Advertisement</h2><div class="copy">
+<p class="reveal">Students read a real advertisement for a weekend trip to London.</p>
+<ol class="steps">
+<li class="reveal"><span class="step-number">01</span><span><strong>Before reading,</strong> the teacher shows pictures of London and explains key words: ticket, hotel, price, and departure.</span></li>
+<li class="reveal"><span class="step-number">02</span><span><strong>During reading,</strong> students read short sections and answer three questions: Where is the trip? How much does it cost? When does it begin?</span></li>
+<li class="reveal"><span class="step-number">03</span><span><strong>After reading,</strong> students work in pairs. They decide whether they would like to take the trip and explain their choice in simple English.</span></li>
+</ol></div><p class="takeaway reveal">The activity combines authentic reading, comprehension, and communication.</p></div>
+</section>
+<section class="slide conclusion" id="slide-8" aria-roledescription="slide" aria-label="8 of 8" aria-hidden="true" inert>
+<div class="topline"><span class="chapter"><i></i>TOWARD INDEPENDENCE</span><span>08 / 08</span></div>
+<div class="slide-content"><h2 class="reveal">Conclusion: From Support to Independence</h2><div class="copy">
+<p class="reveal">Scaffolding makes difficult authentic texts more accessible while keeping their real-world meaning.</p>
+<p class="reveal">It improves reading comprehension and vocabulary knowledge. It also builds confidence, increases motivation, and encourages active participation.</p>
+<p class="reveal">Teachers should give strong support at the beginning and gradually reduce it as students become more capable.</p>
+<p class="reveal">With effective scaffolding, learners move from reading with help to <strong>reading independently</strong>.</p>
+<div class="thank reveal">Thank you for your attention!</div>
+</div></div>
+</section>
+</div><div class="sweep" aria-hidden="true"></div></div>
+<nav class="toolbar" aria-label="Presentation navigation"><div class="nav"><button class="arrow" id="prev" aria-label="Previous slide">←</button><span class="counter" id="counter" role="status" aria-live="polite" aria-atomic="true"></span><button class="arrow" id="next" aria-label="Next slide">→</button></div><div class="dots" id="dots"></div><span class="keyhint">← → NAVIGATE · SWIPE ON MOBILE</span></nav>
+<article class="mobile-copy" id="readingView" aria-label="Reading view"></article>
+</main>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+<div id="overview" role="dialog" aria-modal="true" aria-label="All slides"><div class="overview-head"><span>THE PRESENTATION</span><button class="tool" id="closeOverview">✕ Close</button></div><div class="overview-grid" id="overviewGrid"></div></div>
 <script>
-const DATA=[["Scaffolding Difficult Authentic Reading Texts for Low-Level Learners", "Topic: Supporting Students in Understanding Real-World English Texts\n\nReading authentic English texts can be challenging for students with a low level of English.\n\nThese texts often contain unfamiliar vocabulary, complex grammar, and difficult sentence structures.\n\nHowever, teachers can make authentic texts easier to understand by using scaffolding techniques.\n\nIn this presentation, we will explore how scaffolding helps students develop reading skills, understand challenging texts, and become more confident learners."], ["What Is Scaffolding in Reading?", "Scaffolding is a teaching technique that provides temporary support to students during the learning process.\n\nIt helps learners complete tasks that might be too difficult to do independently.\n\nIn reading lessons, scaffolding may include:\n\n* Explaining important vocabulary before reading.\n* Using pictures and visual materials.\n* Dividing long texts into smaller parts.\n* Asking guiding questions.\n* Providing examples and clear instructions.\n\nThe main goal is to gradually reduce teacher support as students become more independent."], ["What Are Authentic Reading Texts?", "Authentic reading texts are materials originally created for real communication, not specifically for language learners.\n\nThey show students how English is used in everyday life.\n\nExamples of authentic materials include:\n\n* Newspaper articles and online news.\n* Restaurant menus and advertisements.\n* Emails, messages, and social media posts.\n* Travel brochures and websites.\n* Instructions and product descriptions.\n\nAuthentic texts are useful because they connect classroom learning with real-life situations.\n\nHowever, low-level learners may need additional support to understand them successfully."], ["Why Are Authentic Texts Difficult for Low-Level Learners?", "Students at beginner or elementary levels often face several difficulties when reading authentic materials.\n\nThe most common challenges are:\n\n1. Unfamiliar vocabulary: Students may not understand important words.\n2. Complex grammar: Long sentences can make the meaning difficult to follow.\n3. Cultural references: Some information may be unfamiliar to learners.\n4. Too much information: Students may struggle to identify the main ideas.\n5. Lack of confidence: Difficult texts can reduce motivation.\n\nTeachers should identify these challenges and provide appropriate support before asking students to read independently."], ["Pre-Reading Scaffolding Strategies", "Pre-reading activities prepare students for the text and help them understand the topic.\n\nTeachers can use several effective strategies.\n\n1. Activate prior knowledge\n\nAsk students what they already know about the topic.\n\n2. Pre-teach key vocabulary\n\nIntroduce five or six important words using simple definitions and pictures.\n\n3. Use visual support\n\nShow photographs or illustrations related to the text.\n\n4. Make predictions\n\nAsk students to predict the content from the title or images.\n\nThese activities make students more prepared and confident before reading."], ["While-Reading Scaffolding Strategies", "During reading, students need activities that help them understand information step by step.\n\n1. Chunking the text\n\nDivide a long article into short, manageable sections.\n\n2. Gist reading\n\nAsk students to identify the general meaning rather than understand every word.\n\n3. Guiding questions\n\nProvide simple questions to help students find important information.\n\n4. Highlighting key information\n\nEncourage students to underline important words and main ideas.\n\n5. Pair work\n\nAllow students to discuss difficult parts with a partner.\n\nThese strategies help students focus on meaning and reduce confusion."], ["Practical Classroom Example", "Topic: Reading an Authentic Travel Advertisement\n\nLevel: A1–A2\n\nImagine that students need to read a real advertisement about a weekend trip to London.\n\nStep 1. Before Reading\n\nThe teacher shows pictures of London and introduces words such as ticket, hotel, price, and departure.\n\nStep 2. During Reading\n\nStudents read the advertisement in short sections and find important information.\n\nFor example:\n\n* Where is the trip?\n* How much does it cost?\n* When does the trip begin?\n\nStep 3. After Reading\n\nStudents work in pairs and decide whether they would like to take the trip. They explain their choice using simple English.\n\nThis activity combines authentic materials, reading comprehension, and communication."], ["Conclusion: The Importance of Scaffolding", "Scaffolding plays an important role in helping low-level learners understand difficult authentic reading texts.\n\nIt allows teachers to make challenging materials more accessible without removing their real-world meaning.\n\nThe main benefits of scaffolding are:\n\n* Improving reading comprehension.\n* Developing vocabulary knowledge.\n* Increasing motivation and confidence.\n* Encouraging active participation.\n* Supporting independent learning.\n\nTeachers should provide strong support at the beginning and gradually reduce it as students improve.\n\nIn conclusion, effective scaffolding helps learners move from supported reading to independent reading.\n\nThank you for your attention!"]];
-const $=s=>document.querySelector(s),esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const icons=['Aa','◉','≡','?','↗'];
-const paras=t=>t.split('\n\n');
-const p=t=>`<p>${esc(t)}</p>`;
-const list=(lines,numbered=false)=>`<div class="list">${lines.map((s,i)=>`<div class="item" style="--i:${i}"><span class="icon">${numbered?i+1:icons[i%5]}</span><span>${esc(s.replace(/^\* /,''))}</span></div>`).join('')}</div>`;
-const call=t=>`<div class="callout">${esc(t)}</div>`;
-const art=`<div class="art" aria-hidden="true"><div class="orbit"><i class="orb"></i></div><div class="book"><div class="cover"><div class="star">✳</div><div class="booklines"></div><div class="booklines"></div><div class="booklines"></div><div class="booklines"></div></div></div><span class="tile one">Aa → Meaning</span><span class="tile two">Support + Structure</span><span class="tile three">↗ Confidence</span></div>`;
-const london=`<svg class="london" viewBox="0 0 500 220" aria-hidden="true"><circle cx="330" cy="95" r="72" fill="none" stroke="#a8c9bc" stroke-width="3"/><circle cx="330" cy="95" r="55" fill="none" stroke="#a8c9bc" stroke-width="1"/><path d="M330 23V167M258 95H402M280 45L380 145M280 145L380 45" stroke="#a8c9bc" stroke-width="2"/><path d="M0 196H500M50 196V130H130V196M75 130V66H108V130M83 66V40L91 15L100 40V66M150 196V120H240V196M160 120V103H172V120M216 120V103H228V120M280 196L330 95L380 196" fill="none" stroke="#132c35" stroke-width="5"/><circle cx="91" cy="91" r="14" fill="#da623c"/><path d="M91 80V91L98 96" fill="none" stroke="#fff" stroke-width="2"/><path d="M145 195Q200 163 255 195" fill="none" stroke="#da623c" stroke-width="6"/></svg>`;
-function content(i,a){if(i===0)return `<div><h1>${esc(DATA[i][0])}</h1><div class="intro">${a.map(p).join('')}</div></div>${art}`;
-if(i===1)return `<h2>${esc(DATA[i][0])}</h2><div class="columns"><div class="intro">${a.slice(0,3).map(p).join('')}<div class="bridge" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div><div>${list(a[3].split('\n'))}${call(a[4])}</div></div>`;
-if(i===2)return `<h2>${esc(DATA[i][0])}</h2><div class="columns"><div class="intro">${a.slice(0,3).map(p).join('')}<div class="media-stack" aria-hidden="true"><div class="paper"><b>DAILY NEWS</b><i></i><i></i><i></i></div><div class="paper"><b>Menu</b><i></i><i></i><i></i></div><div class="paper"><b>✉ Inbox</b><i></i><i></i><i></i></div></div>${p(a[4])}</div><div>${list(a[3].split('\n'))}${call(a[5])}</div></div>`;
-if(i===3)return `<h2>${esc(DATA[i][0])}</h2><div class="columns"><div class="intro">${p(a[0])}${p(a[1])}<div class="challenge-art" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="challenge-label">?</span></div>${call(a[3])}</div><div>${list(a[2].split('\n'),true)}</div></div>`;
-if(i===4||i===5){let start=i===4?2:1, n=i===4?4:5;return `<h2>${esc(DATA[i][0])}</h2><div class="sectionlead">${a.slice(0,start).map(p).join('')}</div><div class="cards">${Array.from({length:n},(_,j)=>`<div class="card" style="--i:${j}"><span class="num">${j+1}</span><h3>${esc(a[start+j*2])}</h3>${p(a[start+j*2+1])}</div>`).join('')}</div>${call(a[a.length-1])}`;}
-if(i===6)return `<h2>${esc(DATA[i][0])}</h2><div class="columns"><div class="intro">${p(a[0])}<span class="level">${esc(a[1])}</span>${p(a[2])}${london}</div><div class="steps"><div class="step" style="--i:0"><h3>${esc(a[3])}</h3>${p(a[4])}</div><div class="step" style="--i:1"><h3>${esc(a[5])}</h3>${p(a[6])}${p(a[7])}<ul>${a[8].split('\n').map(x=>`<li>${esc(x.slice(2))}</li>`).join('')}</ul></div><div class="step" style="--i:2"><h3>${esc(a[9])}</h3>${p(a[10])}</div></div></div>${call(a[11])}`;
-return `<h2>${esc(DATA[i][0])}</h2><div class="columns"><div class="intro">${p(a[0])}${p(a[1])}<div class="bridge" aria-hidden="true"><i></i><i></i><i></i><i></i></div>${p(a[4])}</div><div>${p(a[2])}<div style="height:12px"></div>${list(a[3].split('\n'))}${call(a[5])}<div class="thank">${esc(a[6])}</div></div></div>`;}
-const classes=['opening','definition','authentic','dark','strategy','strategy while','example','closing'];
-$('#deck').innerHTML=DATA.map((d,i)=>`<section class="slide ${classes[i]}" aria-label="Slide ${i+1}: ${esc(d[0])}" aria-hidden="true"><div class="eyebrow"><span>READING / SCAFFOLDING</span><span>${['THE BIG IDEA','TEMPORARY SUPPORT','REAL-WORLD ENGLISH','UNDERSTANDING THE CHALLENGE','BEFORE READING','DURING READING','IN THE CLASSROOM','TOWARD INDEPENDENCE'][i]}</span></div><div class="body">${content(i,paras(d[1]))}</div><div class="footer"><span>SUPPORT → UNDERSTANDING → INDEPENDENCE</span><b>0${i+1} / 08</b></div></section>`).join('');
-$('#dots').innerHTML=DATA.map((d,i)=>`<button class="dot" aria-label="Go to slide ${i+1}" data-slide="${i}"></button>`).join('');
-$('#overviewGrid').innerHTML=DATA.map((d,i)=>`<button data-slide="${i}"><span>SLIDE 0${i+1}</span>${esc(d[0])}</button>`).join('');
-let current=-1,animTimer,sound=false,audioCtx;const slides=[...document.querySelectorAll('.slide')];
-function readerHTML(i){return `<div class="read-label">SLIDE 0${i+1} · READING VIEW</div><h2>${esc(DATA[i][0])}</h2>`+paras(DATA[i][1]).map(s=>s.startsWith('* ')?`<ul>${s.split('\n').map(l=>`<li>${esc(l.slice(2))}</li>`).join('')}</ul>`:/^\d+\. .*\n/.test(s)?`<div>${s.split('\n').map(p).join('')}</div>`:/^(\d+\.|Step \d\.)/.test(s)?`<h3>${esc(s)}</h3>`:p(s)).join('');}
-function chime(){if(!sound)return;try{audioCtx??=new(window.AudioContext||window.webkitAudioContext)();audioCtx.resume();const t=audioCtx.currentTime;[520,780].forEach((f,j)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(f,t+j*.045);g.gain.setValueAtTime(0,t+j*.045);g.gain.linearRampToValueAtTime(.035,t+j*.045+.012);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.connect(g);g.connect(audioCtx.destination);o.start(t+j*.045);o.stop(t+.24)})}catch(e){}}
-function go(n){n=Math.min(7,Math.max(0,n));if(n===current)return;clearTimeout(animTimer);slides.forEach(s=>s.classList.remove('out','enter'));if(current>=0){slides[current].classList.remove('active');slides[current].classList.add('out');slides[current].setAttribute('aria-hidden','true')}current=n;slides[n].classList.add('active','enter');slides[n].setAttribute('aria-hidden','false');animTimer=setTimeout(()=>slides.forEach(s=>s.classList.remove('out')),800);$('#count').textContent=`0${n+1} / 08`;$('#progress').style.width=((n+1)/8*100)+'%';$('#prev').disabled=n===0;$('#next').disabled=n===7;document.querySelectorAll('.dot').forEach((e,j)=>{e.classList.toggle('current',j===n);if(j===n)e.setAttribute('aria-current','step');else e.removeAttribute('aria-current')});$('#reader').innerHTML=readerHTML(n);history.replaceState(null,'','#slide-'+(n+1));chime();}
-function size(){const focus=document.body.classList.contains('zoomed'),maxW=innerWidth-(innerWidth<700?24:40),availH=focus?innerHeight-95:innerHeight-175;let width=Math.min(1600,maxW);if(innerWidth>=700||focus)width=Math.min(width,Math.max(150,availH)*16/9);$('#stage').style.width=width+'px';$('#stage').style.height=width*9/16+'px';document.documentElement.style.setProperty('--s',width/1600)}
-$('#prev').onclick=()=>go(current-1);$('#next').onclick=()=>go(current+1);document.querySelectorAll('[data-slide]').forEach(b=>b.onclick=()=>{go(+b.dataset.slide);closeGrid()});
-function toggleReader(force){let open=typeof force==='boolean'?force:!$('#reader').classList.contains('open');$('#reader').classList.toggle('open',open);$('#readBtn').setAttribute('aria-pressed',open)}
-$('#readBtn').onclick=()=>toggleReader();$('#soundBtn').onclick=()=>{sound=!sound;$('#soundBtn').textContent=sound?'Sound on':'Sound off';$('#soundBtn').setAttribute('aria-pressed',sound);chime()};
-function focusMode(){document.body.classList.toggle('zoomed');size()}$('#focusBtn').onclick=focusMode;$('#exitFocus').onclick=focusMode;
-function closeGrid(){const wasOpen=$('#overview').classList.contains('open');$('#overview').classList.remove('open');if(wasOpen)$('#gridBtn').focus()}$('#gridBtn').onclick=()=>{$('#overview').classList.add('open');$('#closeGrid').focus()};$('#closeGrid').onclick=closeGrid;
-document.addEventListener('keydown',e=>{if($('#overview').classList.contains('open')){if(e.key==='Escape')closeGrid();if(e.key==='Tab'){let f=[...$('#overview').querySelectorAll('button')],a=f[0],z=f.at(-1);if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}return}if(e.key==='Escape'){document.body.classList.remove('zoomed');size()}if(e.target.tagName==='BUTTON')return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(current+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(current-1)}if(e.key==='Home')go(0);if(e.key==='End')go(7);if(e.key.toLowerCase()==='r')toggleReader()});
-let touchStart;$('#stage').addEventListener('touchstart',e=>{touchStart=[e.changedTouches[0].clientX,e.changedTouches[0].clientY]},{passive:true});$('#stage').addEventListener('touchend',e=>{if(!touchStart)return;let dx=e.changedTouches[0].clientX-touchStart[0],dy=e.changedTouches[0].clientY-touchStart[1];if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3)go(current+(dx<0?1:-1));touchStart=null},{passive:true});window.addEventListener('resize',size);go((parseInt(location.hash.split('-').pop())||1)-1);toggleReader(innerWidth<700);size();
-</script></body></html>
+'use strict';
+const $=s=>document.querySelector(s);
+const slides=[...document.querySelectorAll('.slide')];
+const titles=slides.map(s=>s.querySelector('h1,h2').textContent);
+slides.forEach((s,i)=>{
+  s.querySelectorAll('.reveal').forEach((e,j)=>e.style.setProperty('--order',j));
+  const footer=document.createElement('footer');footer.className='slide-footer';
+  footer.innerHTML='<span>SCAFFOLDING / AUTHENTIC READING</span><span class="mini-track" aria-hidden="true">'+slides.map((_,j)=>'<i class="'+(j<=i?'on':'')+'"></i>').join('')+'</span>';
+  s.append(footer);
+});
+$('#dots').innerHTML=titles.map((t,i)=>'<button class="dot" data-slide="'+i+'" aria-label="Go to slide '+(i+1)+'"></button>').join('');
+$('#overviewGrid').innerHTML=titles.map((t,i)=>'<button data-slide="'+i+'"><span>0'+(i+1)+' / 08</span>'+t+'</button>').join('');
+let current=-1,cleanupTimer;
+function updateReading(){
+  const heading=slides[current].querySelector('h1,h2').cloneNode(true);heading.className='';
+  const copy=slides[current].querySelector('.copy').cloneNode(true);
+  copy.querySelectorAll('[class*=reveal]').forEach(e=>{e.classList.remove('reveal');e.removeAttribute('style')});
+  $('#readingView').replaceChildren();
+  const label=document.createElement('div');label.className='mobile-label';label.textContent='SLIDE 0'+(current+1)+' · READING VIEW';
+  $('#readingView').append(label,heading,...copy.childNodes);
+  const takeaway=slides[current].querySelector('.takeaway');
+  if(takeaway){const t=takeaway.cloneNode(true);t.classList.remove('reveal');t.removeAttribute('style');$('#readingView').append(t)}
+}
+function go(n,initial=false){
+  n=Math.max(0,Math.min(slides.length-1,n));if(n===current)return;
+  clearTimeout(cleanupTimer);const backwards=n<current;
+  slides.forEach(s=>s.classList.remove('leaving','arriving'));
+  $('#deck').classList.toggle('backward',backwards);
+  if(current>=0){slides[current].classList.remove('active');slides[current].classList.add('leaving');slides[current].setAttribute('aria-hidden','true');slides[current].inert=true}
+  current=n;const s=slides[n];s.inert=false;s.setAttribute('aria-hidden','false');s.classList.add('active');
+  if(!initial)s.classList.add('arriving');
+  $('#stage').classList.remove('turning');void $('#stage').offsetWidth;$('#stage').classList.add('turning');
+  cleanupTimer=setTimeout(()=>{slides.forEach(x=>x.classList.remove('leaving','arriving'));$('#stage').classList.remove('turning')},1000);
+  $('#counter').textContent='0'+(n+1)+' / 08';$('#prev').disabled=n===0;$('#next').disabled=n===slides.length-1;
+  document.querySelectorAll('.dot').forEach((d,j)=>{if(j===n)d.setAttribute('aria-current','step');else d.removeAttribute('aria-current')});
+  $('#progress').style.width=((n+1)/slides.length*100)+'%';updateReading();
+  history.replaceState(null,'','#slide-'+(n+1));
+}
+function size(){
+  const portrait=innerWidth<700,focus=document.body.classList.contains('focus');
+  const availableWidth=innerWidth-(portrait?20:40),availableHeight=innerHeight-(focus?90:155);
+  let w=Math.min(1600,availableWidth);
+  if(!portrait||focus)w=Math.min(w,Math.max(160,availableHeight)*16/9);
+  $('#stage').style.width=w+'px';$('#stage').style.height=w*9/16+'px';document.documentElement.style.setProperty('--scale',w/1600);
+}
+function readMode(open){if(typeof open!=='boolean')open=!$('#readingView').classList.contains('open');$('#readingView').classList.toggle('open',open);$('#readToggle').setAttribute('aria-pressed',String(open))}
+function focusMode(on){if(typeof on!=='boolean')on=!document.body.classList.contains('focus');document.body.classList.toggle('focus',on);size()}
+function closeOverview(){if(!$('#overview').classList.contains('open'))return;$('#overview').classList.remove('open');$('#overviewToggle').focus()}
+$('#prev').onclick=()=>go(current-1);$('#next').onclick=()=>go(current+1);
+$('#readToggle').onclick=()=>readMode();$('#focusToggle').onclick=()=>focusMode();$('#focusExit').onclick=()=>focusMode(false);
+$('#overviewToggle').onclick=()=>{$('#overview').classList.add('open');$('#closeOverview').focus()};$('#closeOverview').onclick=closeOverview;
+document.querySelectorAll('[data-slide]').forEach(b=>b.onclick=()=>{go(Number(b.dataset.slide));closeOverview()});
+document.addEventListener('keydown',e=>{
+  if($('#overview').classList.contains('open')){
+    if(e.key==='Escape'){e.preventDefault();closeOverview()}
+    if(e.key==='Tab'){const f=[...$('#overview').querySelectorAll('button')],first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+    return;
+  }
+  if(e.key==='Escape'){focusMode(false);return}
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(['ArrowRight','PageDown'].includes(e.key)){e.preventDefault();go(current+1)}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(current-1)}
+  else if(e.key==='Home'){e.preventDefault();go(0)}
+  else if(e.key==='End'){e.preventDefault();go(7)}
+  else if(e.key===' '&&e.target.tagName!=='BUTTON'){e.preventDefault();go(current+1)}
+  else if(e.key.toLowerCase()==='f')focusMode();else if(e.key.toLowerCase()==='r')readMode();
+});
+let touchStart;
+$('#stage').addEventListener('touchstart',e=>{if(e.touches.length===1)touchStart=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});
+$('#stage').addEventListener('touchend',e=>{if(!touchStart)return;const dx=e.changedTouches[0].clientX-touchStart[0],dy=e.changedTouches[0].clientY-touchStart[1];if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.25)go(current+(dx<0?1:-1));touchStart=null},{passive:true});
+window.addEventListener('resize',size);
+window.addEventListener('hashchange',()=>{const n=parseInt(location.hash.replace('#slide-',''),10);if(Number.isFinite(n))go(n-1)});
+const requested=parseInt(location.hash.replace('#slide-',''),10);go(Number.isFinite(requested)?requested-1:0,true);size();readMode(innerWidth<700);
+</script>
+</body>
+</html>
